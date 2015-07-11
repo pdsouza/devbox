@@ -26,6 +26,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-sensible.git'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'scrooloose/nerdtree.git'
 
 " vim-scripts repos
 
