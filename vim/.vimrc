@@ -27,6 +27,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-sensible.git'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'scrooloose/nerdtree.git'
+Bundle 'airblade/vim-gitgutter'
 
 " vim-scripts repos
 
@@ -48,3 +49,6 @@ set t_Co=256
 " set up colors
 colorscheme gruvbox
 set background=dark
+
+" gitgutter settings
+set updatetime=250 " ms
