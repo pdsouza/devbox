@@ -2,53 +2,43 @@ set nocompatible
 filetype off
 
 " Setting up Vundle - the vim plugin bundler
-
 let fresh=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
     echo "Installing Vundle.."
     echo ""
     silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     let fresh=0
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set Vundle runtime path and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'gmarik/vundle'
+Plugin 'tpope/vim-sensible.git'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/goyo.vim'
+Plugin 'fatih/vim-go'
+Plugin 'docker/docker', {'rtp': '/contrib/syntax/vim'}
 
-" My bundles here:
-"
-" original repos on GitHub
+call vundle#end()
 
-Bundle 'tpope/vim-sensible.git'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'airblade/vim-gitgutter'
-
-" vim-scripts repos
-
-" non-GitHub repos
-
-" Git repos on local machine
-
-" Bundle init if on fresh machine
-if fresh == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
-endif
-
+" indentation defaults
 filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 set t_Co=256
 
 " set up colors
-colorscheme gruvbox
-set background=dark
+colorscheme 256-grayvim
 
 " gitgutter settings
 set updatetime=250 " ms
