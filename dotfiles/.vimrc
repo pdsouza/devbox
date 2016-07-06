@@ -35,6 +35,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" default text-wrapping
+au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.txt setlocal textwidth=80
+
 set t_Co=256
 
 " set up colors
