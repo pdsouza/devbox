@@ -1,7 +1,11 @@
 FROM debian:latest
 
-# core dev tools
+# platform
 RUN apt-get update && apt-get install -y \
+    sudo
+
+# core dev tools
+RUN apt-get install -y \
     vim \
     git \
     tree
@@ -23,7 +27,8 @@ ARG group=pre
 ARG uid=1000
 ARG gid=1000
 RUN groupadd -g ${gid} ${group} \
-    && useradd -u ${uid} -g ${gid} -m -s /bin/bash ${user}
+    && useradd -u ${uid} -g ${gid} -m -s /bin/bash ${user} \
+    && echo "${user} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-passwordless-sudo
 
 # copy over settings
 COPY dotfiles/* /home/${user}/
