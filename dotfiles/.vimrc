@@ -26,6 +26,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/goyo.vim'
 Plugin 'fatih/vim-go'
 Plugin 'docker/docker', {'rtp': '/contrib/syntax/vim'}
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
 
