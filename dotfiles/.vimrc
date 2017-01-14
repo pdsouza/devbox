@@ -25,8 +25,8 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/goyo.vim'
 Plugin 'fatih/vim-go'
-Plugin 'docker/docker', {'rtp': '/contrib/syntax/vim'}
 Plugin 'vim-airline/vim-airline'
+Plugin 'ekalinin/Dockerfile.vim'
 
 call vundle#end()
 
@@ -43,7 +43,7 @@ au BufRead,BufNewFile *.txt setlocal textwidth=80
 set t_Co=256
 
 " set up colors
-colorscheme 256-grayvim
+colorscheme onedark
 
 " gitgutter settings
 set updatetime=250 " ms
