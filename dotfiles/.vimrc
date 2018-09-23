@@ -20,13 +20,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-sensible.git'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/goyo.vim'
 Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ekalinin/Dockerfile.vim'
+
+" colorschemes
+Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
 
@@ -40,10 +42,10 @@ set expandtab
 au BufRead,BufNewFile *.md setlocal textwidth=80
 au BufRead,BufNewFile *.txt setlocal textwidth=80
 
-set t_Co=256
-
 " set up colors
 colorscheme onedark
 
 " gitgutter settings
 set updatetime=250 " ms
+
+set number
