@@ -1,51 +1,59 @@
 set nocompatible
-filetype off
 
-" Setting up Vundle - the vim plugin bundler
-let fresh=1
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    let fresh=0
-endif
-
-" set Vundle runtime path and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'tpope/vim-sensible.git'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/goyo.vim'
-Plugin 'fatih/vim-go'
-Plugin 'vim-airline/vim-airline'
-Plugin 'ekalinin/Dockerfile.vim'
-
+call plug#begin('~/.vim/plugged')
+"Plugin 'tpope/vim-sensible.git'
+Plug 'scrooloose/nerdtree'
+"Plugin 'airblade/vim-gitgutter'
+Plug 'junegunn/goyo.vim'
+"Plugin 'fatih/vim-go'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'ekalinin/Dockerfile.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
+" lang support
+Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-clojure-highlight'
 " colorschemes
-Plugin 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'liuchengxu/space-vim-dark'
+call plug#end()
 
-call vundle#end()
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType vue setlocal shiftwidth=2 tabstop=2
 
 " indentation defaults
-filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
+"set tabstop=4
+"set shiftwidth=4
 set expandtab
 
 " default text-wrapping
-au BufRead,BufNewFile *.md setlocal textwidth=80
-au BufRead,BufNewFile *.txt setlocal textwidth=80
+"au BufRead,BufNewFile *.md setlocal textwidth=80
+"au BufRead,BufNewFile *.txt setlocal textwidth=80
 
 " set up colors
-colorscheme onedark
+ if (has("termguicolors"))
+   set termguicolors
+ endif
+"if exists('+termguicolors')
+"  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"  set termguicolors
+"endif
+"set background=dark
+
+color space-vim-dark
+" fix weird line number colors
+hi LineNr ctermbg=NONE guibg=NONE
 
 " gitgutter settings
 set updatetime=250 " ms
 
 set number
+
+
+" get rid of ugly mode indicator
+set noshowmode
+set statusline=%=\ %f\ %m
