@@ -44,7 +44,7 @@ set expandtab
 "endif
 "set background=dark
 
-color space-vim-dark
+color onedark
 " fix weird line number colors
 hi LineNr ctermbg=NONE guibg=NONE
 
