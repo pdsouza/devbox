@@ -53,7 +53,5 @@ set updatetime=250 " ms
 
 set number
 
-
-" get rid of ugly mode indicator
 set noshowmode
-set statusline=%=\ %f\ %m
+set statusline=%=\ %l:%c%V\ %f\ %m
