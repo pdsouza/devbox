@@ -21,8 +21,10 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'liuchengxu/space-vim-dark'
 call plug#end()
 
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType vue setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
 
 " indentation defaults
 "set tabstop=4
